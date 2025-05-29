@@ -24,6 +24,6 @@ Nous aidons les entreprises tech à résoudre leurs problèmes techniques, autom
 
 ## ✉️ Contact
 
-📬 hello@craftminds.tech  
+📬 enzo.monnier@craftminds.fr 
 🌐 [craftminds.fr](https://craftminds.fr)  
 🔗 [LinkedIn](https://www.linkedin.com/in/enzo-m-craftminds-7524ab205/)
