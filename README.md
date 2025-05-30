@@ -16,11 +16,11 @@ Nous aidons les entreprises tech à résoudre leurs problèmes techniques, autom
   Création de solutions adaptées à vos besoins métiers.  
   💰 **45€ / heure**
 
-## 📂 Projets récents
+## 📂 Projet récent
 
-- 🧠 Assistant IA pour support technique
-- 📊 Dashboard de tickets clients
-- 🔄 Intégration API pour CRM
+Vous pouvez tester mes projets en téléchargeant le repo et suivant les inscructions des README.md
+
+- 🧠 CRM local
 
 ## ✉️ Contact
 
