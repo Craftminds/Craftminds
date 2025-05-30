@@ -1,6 +1,21 @@
 # Craftminds CRM
 
-Un CRM simple et efficace pour gérer vos clients.
+Ce projet est une démonstration de mes compétences en développement web. Il s'agit d'un CRM (Customer Relationship Management) développé avec des technologies modernes.
+
+## 📝 À propos
+
+Ce projet est publié sous licence MIT et est destiné à être utilisé comme :
+- Une démonstration de mes compétences techniques
+- Un exemple de code pour des fins éducatives
+- Une référence pour des projets similaires
+
+## ⚠️ Utilisation
+
+Ce projet est fourni "tel quel", sans garantie d'aucune sorte. Il est destiné à des fins de démonstration et d'apprentissage uniquement.
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ## Prérequis
 
@@ -45,4 +60,4 @@ Un CRM simple et efficace pour gérer vos clients.
 
 ## Support
 
-Pour toute question ou problème, contactez l'équipe de support à support@craftminds.fr
+Pour toute question ou problème, contactez moi à enzo.monnier@craftminds.fr
