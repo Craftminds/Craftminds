@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply min-h-screen text-gray-100 antialiased;
+    background: radial-gradient(ellipse at 60% 20%, #232946 0%, #1a1a2e 60%, #121212 100%);
+    /* Optionnel : effet grain */
+    /* background-image: url('data:image/svg+xml;utf8,<svg ...>'); */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-gray-100;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200;
+  }
+
+  .input-field {
+    @apply mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200;
+  }
+
+  .glass {
+    @apply bg-white/10 backdrop-blur-lg shadow-xl border border-white/10;
+  }
+
+  .btn-glass {
+    @apply rounded-full bg-white/10 backdrop-blur border border-white/10 shadow flex items-center justify-center text-gray-100 font-semibold transition-all duration-200;
+    box-shadow: 0 2px 8px 0 #0004;
+  }
+
+  .btn-glass-blue {
+    @apply btn-glass hover:bg-blue-900/30 hover:text-blue-200 focus:ring-2 focus:ring-blue-400 active:scale-95;
+  }
+
+  .btn-glass-violet {
+    @apply btn-glass hover:bg-violet-900/30 hover:text-violet-200 focus:ring-2 focus:ring-violet-400 active:scale-95;
+  }
+
+  .btn-glass-red {
+    @apply btn-glass hover:bg-red-900/30 hover:text-red-200 focus:ring-2 focus:ring-red-400 active:scale-95;
+  }
+
+  .btn-glass-green {
+    @apply btn-glass hover:bg-green-900/30 hover:text-green-200 focus:ring-2 focus:ring-green-400 active:scale-95;
+  }
+
+  .btn-glass-neutral {
+    @apply btn-glass hover:bg-white/20 hover:text-gray-200 focus:ring-2 focus:ring-gray-400 active:scale-95;
+  }
+
+  .input-glass {
+    @apply rounded-full bg-white/10 backdrop-blur border border-white/10 shadow focus:outline-none focus:ring-2 focus:ring-blue-600 text-gray-100 placeholder-gray-400 px-4 py-2;
+  }
+
+  .kanban-col-glass {
+    @apply glass p-4 rounded-3xl min-w-[320px] max-w-xs flex-1 flex flex-col transition-all duration-200 hover:shadow-2xl hover:-translate-y-1;
+  }
+
+  .card-glass {
+    @apply glass rounded-2xl p-4 mb-2 shadow;
+  }
+
+  .glass-no-blur {
+    @apply bg-white/10 shadow-xl border border-white/10;
+  }
+}
+
+/*
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+*/
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Scrollbar custom */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 #232946;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #232946;
+  border-radius: 8px;
+}
