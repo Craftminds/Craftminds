@@ -7,7 +7,6 @@ Ce projet est une démonstration de mes compétences en développement web. Il s
 Ce projet est publié sous licence MIT et est destiné à être utilisé comme :
 - Une démonstration de mes compétences techniques
 - Un exemple de code pour des fins éducatives
-- Une référence pour des projets similaires
 
 ## ⚠️ Utilisation
 
