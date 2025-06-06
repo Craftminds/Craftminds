@@ -13,7 +13,7 @@ const ExportCSV = ({ onExport, className = '', children }: ExportCSVProps) => {
     <button
       onClick={onExport}
       type="button"
-      className={className || "inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"}
+      className={className || "btn-glass-green inline-flex items-center px-4 py-2 text-sm font-medium"}
     >
       {children ? children : <><ArrowDownTrayIcon className="h-5 w-5 mr-2" />Exporter CSV</>}
     </button>

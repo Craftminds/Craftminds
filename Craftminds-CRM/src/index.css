@@ -33,7 +33,7 @@
   }
 
   .glass {
-    @apply bg-white/10 backdrop-blur-lg shadow-xl border border-white/10;
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
   }
 
   .btn-glass {
@@ -42,27 +42,27 @@
   }
 
   .btn-glass-blue {
-    @apply btn-glass hover:bg-blue-900/30 hover:text-blue-200 focus:ring-2 focus:ring-blue-400 active:scale-95;
+    @apply bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 hover:text-blue-200 rounded-lg transition-all duration-200;
   }
 
   .btn-glass-violet {
-    @apply btn-glass hover:bg-violet-900/30 hover:text-violet-200 focus:ring-2 focus:ring-violet-400 active:scale-95;
+    @apply bg-violet-500/20 hover:bg-violet-500/30 text-violet-300 hover:text-violet-200 rounded-lg transition-all duration-200;
   }
 
   .btn-glass-red {
-    @apply btn-glass hover:bg-red-900/30 hover:text-red-200 focus:ring-2 focus:ring-red-400 active:scale-95;
+    @apply bg-red-500/20 hover:bg-red-500/30 text-red-300 hover:text-red-200 rounded-lg transition-all duration-200;
   }
 
   .btn-glass-green {
-    @apply btn-glass hover:bg-green-900/30 hover:text-green-200 focus:ring-2 focus:ring-green-400 active:scale-95;
+    @apply bg-green-500/20 hover:bg-green-500/30 text-green-300 hover:text-green-200 rounded-lg transition-all duration-200;
   }
 
   .btn-glass-neutral {
-    @apply btn-glass hover:bg-white/20 hover:text-gray-200 focus:ring-2 focus:ring-gray-400 active:scale-95;
+    @apply bg-gray-500/20 hover:bg-gray-500/30 text-gray-300 hover:text-gray-200 rounded-lg transition-all duration-200;
   }
 
   .input-glass {
-    @apply rounded-full bg-white/10 backdrop-blur border border-white/10 shadow focus:outline-none focus:ring-2 focus:ring-blue-600 text-gray-100 placeholder-gray-400 px-4 py-2;
+    @apply bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent;
   }
 
   .kanban-col-glass {
@@ -70,11 +70,29 @@
   }
 
   .card-glass {
-    @apply glass rounded-2xl p-4 mb-2 shadow;
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 transition-all duration-200 hover:bg-white/10;
   }
 
   .glass-no-blur {
     @apply bg-white/10 shadow-xl border border-white/10;
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
   }
 }
 
@@ -138,21 +156,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
-
-/* Scrollbar custom */
-.custom-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: #334155 #232946;
-}
-.custom-scrollbar::-webkit-scrollbar {
-  width: 8px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #334155;
-  border-radius: 8px;
-}
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: #232946;
-  border-radius: 8px;
 }

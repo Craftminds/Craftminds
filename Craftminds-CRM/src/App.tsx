@@ -6,6 +6,7 @@ import AddClientForm, { ClientFormModal } from './components/AddClientForm.tsx';
 import ImportCSV from './components/ImportCSV.tsx';
 import ExportCSV from './components/ExportCSV.tsx';
 import ClientCard from './components/ClientCard';
+import MobileNav from './components/MobileNav';
 import { MagnifyingGlassIcon, CloudArrowUpIcon, UserPlusIcon, ArrowPathIcon, ArrowDownTrayIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
 
 const initialColumns: Column[] = [
@@ -23,6 +24,7 @@ function App() {
   const [hasChanges, setHasChanges] = useState(false);
   const originalFileHandle = useRef<FileSystemFileHandle | null>(null);
   const initialColumnsRef = useRef<Column[]>([]);
+  const [showAddClientModal, setShowAddClientModal] = useState(false);
 
   // Fonction de sauvegarde explicite
   const saveToLocalStorage = (newColumns: Column[]) => {
@@ -275,7 +277,7 @@ function App() {
       <aside className="glass flex flex-col items-center gap-10 py-10 px-4 min-h-screen w-64 shadow-2xl rounded-r-3xl">
         <span className="text-3xl font-extrabold tracking-tight text-blue-400 mb-2">🧊</span>
         <span className="text-2xl font-extrabold tracking-tight text-gray-100 mb-8 text-center">Craftminds CRM</span>
-        <ImportCSV onImport={handleImport} className="btn-glass-blue flex items-center gap-3 w-full px-5 py-3 text-base font-semibold group" >
+        <ImportCSV onImport={handleImport} className="btn-glass-blue flex items-center gap-3 w-full px-5 py-3 text-base font-semibold group">
           <CloudArrowUpIcon className="w-6 h-6 text-blue-300 group-hover:text-blue-200 transition-colors" />
           <span>Importer CSV</span>
         </ImportCSV>
@@ -288,12 +290,13 @@ function App() {
             <span>Sauvegarder les modifications</span>
           </button>
         )}
-        <AddClientForm onAdd={addClient} customButtonClass="btn-glass-violet flex items-center gap-3 w-full px-5 py-3 text-base font-semibold group" customButtonContent={
-          <>
-            <UserPlusIcon className="w-6 h-6 text-violet-300 group-hover:text-violet-200 transition-colors" />
-            <span>Ajouter un client</span>
-          </>
-        } />
+        <button
+          onClick={() => setShowAddClientModal(true)}
+          className="btn-glass-violet flex items-center gap-3 w-full px-5 py-3 text-base font-semibold group"
+        >
+          <UserPlusIcon className="w-6 h-6 text-violet-300 group-hover:text-violet-200 transition-colors" />
+          <span>Ajouter un client</span>
+        </button>
         <button
           onClick={resetApplication}
           className="btn-glass-red flex items-center gap-3 w-full px-5 py-3 text-base font-semibold group"
@@ -302,6 +305,7 @@ function App() {
           <span>Réinitialiser</span>
         </button>
       </aside>
+
       {/* Zone principale dark uniforme */}
       <div className="flex-1 flex flex-col min-h-screen">
         {/* Barre de recherche glass centrée */}
@@ -317,18 +321,38 @@ function App() {
             />
           </div>
         </div>
+
         {/* Colonnes Kanban glassmorphism dark */}
         <main className="flex-1 w-full max-w-7xl mx-auto px-8 pb-12 flex gap-10 items-start justify-center pt-8">
           <DragDropContext onDragEnd={onDragEnd}>
             <div className="flex flex-1 gap-10 items-start justify-center">
               {getFilteredColumns().map((column) => (
-                <KanbanColumn key={column.id} column={{...column}} ClientCardComponent={props => <ClientCard {...props} onEdit={updateClient} />} />
+                <KanbanColumn
+                  key={column.id}
+                  column={column}
+                  onUpdateClient={updateClient}
+                />
               ))}
             </div>
           </DragDropContext>
         </main>
       </div>
-      </div>
+
+      {/* Mobile Navigation */}
+      <MobileNav
+        onAddClient={() => setShowAddClientModal(true)}
+        onImport={() => document.getElementById('import-csv')?.click()}
+        onExport={exportToCSV}
+        onReset={resetApplication}
+      />
+
+      {/* Modals */}
+      <ClientFormModal
+        isOpen={showAddClientModal}
+        onClose={() => setShowAddClientModal(false)}
+        onSubmit={addClient}
+      />
+    </div>
   );
 }
 

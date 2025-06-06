@@ -34,21 +34,8 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 2. Ouvrez un terminal dans le dossier du projet
 3. Exécutez `npm install`
 4. Lancez l'application avec `npm run dev`
-
-## Sécurité
-
-### Protection des données
-
-- Les données sensibles sont stockées localement
-- Les mots de passe sont hachés
-- Les sessions expirent après 24h d'inactivité
-
-### Bonnes pratiques
-
-- Ne partagez jamais vos identifiants
-- Déconnectez-vous après chaque session
-- Faites des sauvegardes régulières de vos données
-- Mettez à jour régulièrement l'application
+5. Importez le fichier `clients.csv` dans `/src/data`
+6. Testez et faites votre retour ! 
 
 ## Fonctionnalités
 

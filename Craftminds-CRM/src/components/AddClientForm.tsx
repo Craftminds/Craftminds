@@ -16,14 +16,13 @@ interface AddClientFormProps {
 }
 
 interface ClientFormModalProps {
-  initialValues: Partial<Client>;
+  isOpen: boolean;
   onClose: () => void;
   onSubmit: (client: Omit<Client, 'id' | 'createdAt' | 'updatedAt'>) => void;
-  title: string;
-  submitLabel: string;
+  initialValues?: Partial<Client>;
 }
 
-const ClientFormModal = ({ initialValues, onClose, onSubmit, title, submitLabel }: ClientFormModalProps) => {
+export function ClientFormModal({ isOpen, onClose, onSubmit, initialValues = {} }: ClientFormModalProps) {
   const [formData, setFormData] = useState({
     name: initialValues.name || '',
     email: initialValues.email || '',
@@ -31,9 +30,12 @@ const ClientFormModal = ({ initialValues, onClose, onSubmit, title, submitLabel 
     status: (initialValues.status as ClientStatus) || 'Contacté',
     notes: initialValues.notes || '',
   });
+
+  if (!isOpen) return null;
+
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose} />
       <div className="glass rounded-3xl p-8 max-w-md w-full shadow-2xl relative z-10 overflow-y-auto max-h-[90vh] border border-white/10">
         <button
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-200 text-xl font-bold"
@@ -42,7 +44,9 @@ const ClientFormModal = ({ initialValues, onClose, onSubmit, title, submitLabel 
         >
           ×
         </button>
-        <h2 className="text-2xl font-bold mb-6 text-center text-gray-100">{title}</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center text-gray-100">
+          {initialValues.id ? 'Modifier le client' : 'Ajouter un client'}
+        </h2>
         <form
           onSubmit={e => {
             e.preventDefault();
@@ -112,14 +116,16 @@ const ClientFormModal = ({ initialValues, onClose, onSubmit, title, submitLabel 
           </div>
           <div className="flex justify-end space-x-3 pt-2">
             <button type="button" onClick={onClose} className="btn-glass-neutral px-6 py-2 text-sm font-medium">Annuler</button>
-            <button type="submit" className="btn-glass-violet px-6 py-2 text-sm font-medium">{submitLabel}</button>
+            <button type="submit" className="btn-glass-violet px-6 py-2 text-sm font-medium">
+              {initialValues.id ? 'Enregistrer' : 'Ajouter'}
+            </button>
           </div>
         </form>
       </div>
     </div>,
     document.body
   );
-};
+}
 
 const AddClientForm = ({ onAdd, customButtonClass = '', customButtonContent }: AddClientFormProps) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -139,14 +145,11 @@ const AddClientForm = ({ onAdd, customButtonClass = '', customButtonContent }: A
 
   return (
     <ClientFormModal
-      initialValues={{}}
+      isOpen={isOpen}
       onClose={() => setIsOpen(false)}
       onSubmit={onAdd}
-      title="Ajouter un client"
-      submitLabel="Ajouter"
     />
   );
 };
 
-export default AddClientForm;
-export { ClientFormModal }; 
+export default AddClientForm; 
