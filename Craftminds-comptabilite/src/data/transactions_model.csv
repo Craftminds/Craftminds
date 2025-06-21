@@ -1,0 +1,7 @@
+type,date,client,service,montant
+revenue,2024-03-20,Client A,Développement Web,1500
+revenue,2024-03-21,Client B,Design UI/UX,800
+revenue,2024-03-22,Client C,Maintenance Site,300
+expense,2024-03-20,,Hébergement Web,50
+expense,2024-03-21,,Licences Logiciels,200
+expense,2024-03-22,,Matériel Informatique,450 

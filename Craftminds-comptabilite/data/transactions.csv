@@ -1,0 +1,5 @@
+id,type,description,amount,date,category
+f67cb30a-db81-47d5-9f50-434ac9b092ec,revenue,test - teeest,233,2025-06-07,Revenus
+5e24bc4f-ff4a-46fc-b23c-ed99a94a0a30,expense,doubletest,222,2025-06-07,Dépenses
+d7db37e5-acdb-4aa1-8657-b03e4ff7f541,expense,bla bla,22,2025-06-07,Dépenses
+3b100404-8f1a-4472-9365-65f6452b9992,revenue,Craftminds - Web,150,2025-06-10,Revenus
